@@ -1,0 +1,62 @@
+<html>
+
+    <body>
+<div class='parent'>
+    <div class="left">
+        <div class="inner">
+            <div class="name-hero">
+                <div class="name-text">
+                    <h3>{{name}} </h3>
+
+                </div>
+
+				<div class="title">
+                    <h3> {{title}} </h3>
+                 </div>
+            </div>
+
+
+            <div class="summary">
+                <h1>Summary</h1>
+                <p>{{summary}}</p>
+            </div>
+            <section>
+                <h1>Employment</h1>
+                {% for experience in workExperience %}
+                <p><em>{{experience.dates}} | {{experience.company}} | {{experience.title}}</em></p>
+                <p>{{experience.description}}</p>
+                {% endfor %}
+            </section>
+            <section>
+                <h1>Education</h1>
+                {% for edu in education %}
+                <p><em>{{edu.dates}} | {{edu.school}} | {{edu.degree}}</em></p>
+                <p>{{edu.description}}</p>
+
+                {% endfor %}
+            </section>
+
+
+        </div>
+    </div>
+    <div class="right">
+            <h2>Contact Information</h2>
+            <p>Email: {{contactInfo.email}}</p>
+            <p>Phone: {{contactInfo.phone}}</p>
+            <p>Address: {{contactInfo.address}}</p>
+            <p>LinkedIn: <a href="{{contactInfo.linkedin}}">LinkedIn Profile</a></p>
+            <p>Github: <a href="{{contactInfo.github}}">GitHub Profile</a></p>
+
+        <section>
+            <h1>Skills</h1>
+            <ul class="skill-set">
+                {% for skill in skills %}
+                <li>{{skill}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+            </div>
+</div>
+</div>
+  </body>
+</html>
